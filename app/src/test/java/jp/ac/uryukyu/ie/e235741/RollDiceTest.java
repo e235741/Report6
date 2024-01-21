@@ -3,8 +3,8 @@ package jp.ac.uryukyu.ie.e235741;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class GameMasterTest {
-    @Test void GMTest(){
+public class RollDiceTest {
+    @Test void Test(){
         GameMaster mas = new GameMaster();
         mas.twoDiceGame();
         if (mas.getIsClear() == true){
