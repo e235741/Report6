@@ -4,9 +4,9 @@ import java.util.Scanner;
  * ゲームを動かすクラス
  */
 public class GameMaster {
-    private Dice dice1 = new Dice();
-    private Dice dice2 = new Dice();
-    private Dice dice3 = new Dice();
+    private Dice dice1;
+    private Dice dice2;
+    private Dice dice3;
     /** 成功した時、失敗した時に出力されるコメントを保存する */
     private String comment;
     /** ゾロ目が揃ったかを記録する　テストの時に使われる */
@@ -14,7 +14,7 @@ public class GameMaster {
     /** プレイしている人の入力を記録する */
     private int input;
     /** ゲームを終了するかどうかを記録する */
-    private boolean isFinish = false;
+    private boolean isFinish;
     /** ゾロ目が揃った回数を記録する */
     private int success;
     /** ゾロ目が揃わなかった回数を記録する */
@@ -25,11 +25,22 @@ public class GameMaster {
     static String BadComment = "残念。また頑張ろう！";
 
     /**
+     * サイコロのインスタンス生成＆フィールド初期化
+     */
+    public GameMaster(){
+        this.dice1 = new Dice();
+        this.dice2 = new Dice();
+        this.dice3 = new Dice();
+        this.isFinish = false;
+    }
+
+    /**
      * ゲームの導入部分を担当するメソッド
      */
     public void playGame(){
         System.out.println("〜〜 サイコロゾロ目ゲーム 〜〜");
-        System.out.println("サイコロをゾロ目に揃えましょう！２個モードか３個モードを選べます。");
+        System.out.println("サイコロゾロ目ゲーム サイコロをゾロ目に揃えましょう！");
+        System.out.println("ゲームを開始しましょう！２個モードか３個モードを選べます。");
         System.out.println("プレイしたい方の番号を入力してください。");
     }
     /**
@@ -54,7 +65,7 @@ public class GameMaster {
     /** ゲームを続けるかやめるかを選ばせるメソッド */
     public void choice(){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("ゲームを続けますか？");
+        System.out.println("ゲームを続けますか？ 選択してください。");
         System.out.println("0  ２個モードをプレイする。");
         System.out.println("1  ３個モードをプレイする。");
         System.out.println("2  ゲームをやめる。");

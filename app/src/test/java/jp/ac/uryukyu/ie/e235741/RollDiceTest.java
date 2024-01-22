@@ -7,6 +7,10 @@ import static org.junit.jupiter.api.Assertions.*;
  *  成功した時、失敗した時でコメントが違うことをテストする
  */
 public class RollDiceTest {
+    /**
+     * テストのメソッド
+     * 成功した時と失敗した時それぞれで表示されるメッセージが適切か確かめる
+     */
     @Test void Test(){
         GameMaster mas = new GameMaster();
         mas.twoDiceGame();
