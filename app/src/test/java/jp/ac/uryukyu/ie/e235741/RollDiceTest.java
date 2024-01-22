@@ -2,7 +2,10 @@ package jp.ac.uryukyu.ie.e235741;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-
+/**
+ * 「twoDiceGame()」と「threeDiceGame()」のテストのクラス
+ *  成功した時、失敗した時でコメントが違うことをテストする
+ */
 public class RollDiceTest {
     @Test void Test(){
         GameMaster mas = new GameMaster();
